@@ -1,0 +1,134 @@
+.section{
+background:#05070d;
+
+min-height:100vh;
+box-sizing:border-box;
+
+padding:38px 100px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+overflow:hidden;
+
+position:relative;
+}
+
+/* LEFT GUIDE LINE */
+.section::before{
+content:"";
+position:absolute;
+
+left:100px;
+top:0;
+bottom:0;
+
+width:1px;
+background:rgba(255,255,255,.08);
+}
+
+/* RIGHT GUIDE LINE */
+.section::after{
+content:"";
+position:absolute;
+
+right:100px;
+top:0;
+bottom:0;
+
+width:1px;
+background:rgba(255,255,255,.08);
+}
+
+/* ---------- HEADER ---------- */
+
+.header{
+text-align:center;
+max-width:900px;
+margin:0 auto 26px auto;
+}
+
+/* badge row */
+.badge{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:8px;
+
+font-size:14px;
+font-weight:500;
+letter-spacing:.06em;
+
+margin-bottom:24px;
+}
+
+/* red icon */
+.icon{
+color:#ff5a67;
+font-size:12px;
+
+transform:translateY(-1px);
+}
+
+/* blue text */
+.label{
+color:#18bfff;
+}
+
+/* main heading */
+.header h2{
+margin:0 0 26px 0;
+
+font-size:44px;
+line-height:1.08;
+
+font-family:Georgia,serif;
+font-weight:400;
+
+color:#e7e7e7;
+}
+
+/* description */
+.header p{
+max-width:720px;
+
+margin:0 auto;
+
+font-size:18px;
+line-height:1.95;
+
+color:#8b8f97;
+}
+
+/* ---------- GRID ---------- */
+
+.grid{
+display:flex;
+
+width:100%;
+max-width:none;
+
+margin:0;
+
+height:420px;
+
+border:1px solid rgba(255,255,255,.1);
+
+position:relative;
+}
+
+/* bottom guide line */
+.grid::after{
+content:"";
+position:absolute;
+
+left:0;
+right:0;
+
+bottom:-95px;
+
+height:1px;
+
+background:rgba(255,255,255,.08);
+}

@@ -1,6 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Playfair_Display } from 'next/font/google'
 
+const playfair = Playfair_Display({ subsets: ['latin'] })
+
+// Apply playfair.className to your <h2> in Testimonials.js
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
