@@ -1,5 +1,6 @@
 .card{
 flex:1;
+color:#333333;
 
 height:400px;
 padding:22px 18px;
@@ -18,11 +19,11 @@ background-color 400ms ease,
 transform 400ms ease;
 }
 
+
 /* ---------- TOP EDGE GRADIENT ---------- */
 
 .card::before{
 content:"";
-
 position:absolute;
 
 top:0;
@@ -32,7 +33,6 @@ right:0;
 height:1px;
 
 opacity:0;
-
 transition:opacity .45s ease;
 
 background:linear-gradient(
@@ -49,15 +49,14 @@ z-index:5;
 .active{
 flex:1.85;
 background:#0a0c10;
-
 transform:translateY(-2px);
-
 position:relative;
 }
 
 .active::before{
 opacity:1;
 }
+
 
 /* ---------- ICONS ---------- */
 
@@ -67,11 +66,11 @@ width:20px;
 height:20px;
 
 color:#a6a6a6;
-
 stroke-width:2.2;
 
 transform:translateY(-1px);
 }
+
 
 /* ---------- LOGO ---------- */
 
@@ -90,23 +89,31 @@ color .35s ease;
 color:#b8b8b8;
 }
 
+
 /* ---------- CONTENT ---------- */
 
 .contentArea{
 flex:1;
 padding:28px 0;
+display:flex;
+align-items:flex-start;
 }
 
 .content{
+max-height:0;
 opacity:0;
-transform:translateY(10px);
+overflow:hidden;
+
+transform:translateY(14px);
 
 transition:
-opacity .28s ease .22s,   /* delay until card mostly expands */
-transform .28s ease .22s;
+max-height .5s cubic-bezier(.22,1,.36,1),
+opacity .3s ease .18s,
+transform .4s ease .18s;
 }
 
 .active .content{
+max-height:180px;
 opacity:1;
 transform:translateY(0);
 }
@@ -117,6 +124,7 @@ line-height:1.95;
 color:#9b9b9b;
 margin:0;
 }
+
 
 /* ---------- BOTTOM ---------- */
 
@@ -141,8 +149,28 @@ font-weight:400;
 color:#e8e8e8;
 }
 
+
+/* FIXED AUTHOR ANIMATION */
+
 .author{
 text-align:right;
+
+max-height:0;
+opacity:0;
+overflow:hidden;
+
+transform:translateY(12px);
+
+transition:
+max-height .4s ease,
+opacity .28s ease .18s,
+transform .35s ease .18s;
+}
+
+.active .author{
+max-height:70px;
+opacity:1;
+transform:translateY(0);
 }
 
 .author h4{
@@ -164,6 +192,7 @@ font-size:14px;
 color:#6d6d6d;
 }
 
+
 /* ---------- BOTTOM GRADIENT ---------- */
 
 .gradientBar{
@@ -183,6 +212,7 @@ background:linear-gradient(
 #e94263 100%
 );
 }
+
 
 /* ---------- INLINE LOGOS ---------- */
 
